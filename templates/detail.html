@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<h1>Todo</h1>
+{% endblock %}
+
+{% block body %}
+<h2>{{post.title}}</h2>
+<p>{{post.detail}}</p>
+<p>{{post.due.date()}}</p>
+{% endblock %}
