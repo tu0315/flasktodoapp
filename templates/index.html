@@ -1,24 +1,27 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}<!-- base.htmlを継承 -->
 
+<!-- headを書き換える -->
 {% block head %}
 <h1>Todo</h1>
 {% endblock %}
 
+<!-- bodyを書き換える -->
 {% block body %}
-<a class="btn btn-info btn-lg m-5" href="/create" role="button">新規登録画面</a>
-        {% for post in posts %}
+<a class="btn btn-info btn-lg m-5" href="/create" role="button">新規登録</a>
+        {% for post in posts %}<!-- postsからpostを取得するfor文 -->
         <div class="card w-50 mb-3" style="margin: auto ;">
             <div class="card-body">
-                {% if post.due.date() < today %}
+                {% if post.due.date() < today %}<!-- 取得した期限が今日以前の場合 -->
                     <div class="alert alert-warning" role="alert">
                     期限切れです！
                     </div>
                 {% endif %}
-                <h2 class="card-title">タイトル：{{post.title}}</h2>
+                <!-- <h2 class="card-title">ID:{{post.id}}</h2> -->
+                <h2 class="card-title">タイトル:{{post.title}}</h2>
                 <p>期限:{{post.due.date()}}</p>
-                <a class="btn btn-secondary btn-sm" href="/detail/{{post.id}}" role="button">詳細</a>
-                <a class="btn btn-success btn-sm" href="/update/{{post.id}}" role="button">更新</a>
-                <a class="btn btn-danger btn-sm" href="/delete/{{post.id}}" role="button">削除</a>
+                <a class="btn btn-secondary" href="/detail/{{post.id}}" role="button">詳細</a>
+                <a class="btn btn-success" href="/update/{{post.id}}" role="button">更新</a>
+                <a class="btn btn-danger" href="/delete/{{post.id}}" role="button">削除</a>
             </div>
         </div>
         {% endfor %}

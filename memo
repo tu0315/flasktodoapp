@@ -3,6 +3,18 @@
 Flaskへようこそ — Flask Documentation (2.2.x) https://msiz07-flask-docs-ja.readthedocs.io/ja/latest/
 はじめに — pep8-ja 1.0 ドキュメント https://pep8-ja.readthedocs.io/ja/latest/#section-36
 
+DB・テーブル反映
+$ python3
+Python 3.9.12 (main, Apr  5 2022, 01:53:17) 
+[Clang 12.0.0 ] :: Anaconda, Inc. on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from app import app
+>>> from app import db
+>>> with app.app_context():
+...     db.create_all()
+... 
+>>> exit()
+
 2023/12/12
 4h
 Bootstrap導入まで
