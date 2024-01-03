@@ -3,6 +3,10 @@
 Flaskへようこそ — Flask Documentation (2.2.x) https://msiz07-flask-docs-ja.readthedocs.io/ja/latest/
 はじめに — pep8-ja 1.0 ドキュメント https://pep8-ja.readthedocs.io/ja/latest/#section-36
 
+起動
+. venv/bin/activate
+flask --app app --debug run
+
 DB・テーブル反映
 $ python3
 Python 3.9.12 (main, Apr  5 2022, 01:53:17) 
